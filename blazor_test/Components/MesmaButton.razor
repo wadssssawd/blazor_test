@@ -1,0 +1,25 @@
+﻿<button @onclick= "Increments" tabindex="0" title=" @Title " style="background-color: @(Colour); @Style">
+    @Count
+
+    <p>
+    Mesma button
+    </p>
+  </button>
+
+@code {
+    [Parameter]
+    public string Colour { get; set; }
+    public int Count { get; set; }
+    [Parameter]
+    public EventCallback OnClick { get; set; }
+    public async void Increments()
+    {
+        await OnClick.InvokeAsync();  
+    }
+    [Parameter]
+    public string Title { get; set; }
+    [Parameter]
+    public string Style { get; set; }
+
+
+}

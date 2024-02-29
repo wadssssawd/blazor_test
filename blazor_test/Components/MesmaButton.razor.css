@@ -1,0 +1,49 @@
+﻿
+
+@keyframes example {
+    0% {
+        background-color: #24394F;
+        left: 0px;
+        top: 0px;
+    }
+
+    100% {
+        background-color: black;
+        left: 200px;
+        top: 200px;
+    }
+    /*set up an animation to be used under the name example */
+}
+
+#button {
+    border: solid;
+    border-color: #EAB33C;
+    padding: 15px 32px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    background-color: #24394F;
+    opacity: 0.6;
+    transition: 500ms all;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+}
+
+body {
+    background-color: #CFDCE5; /*mesma grey*/
+}
+
+#button > p {
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #EAB33C;
+}
+
+#button:hover {
+    opacity: 1.0;
+}

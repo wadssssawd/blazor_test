@@ -1,0 +1,31 @@
+﻿@page "/demo";
+
+@using blazor_test.Components;
+
+<h3>@Text</h3>
+
+@foreach (var number in Numbers)
+{
+    var Index = Numbers.IndexOf(number);
+    <MesmaButton Style="@number.style" OnClick="() => IncrementList(Index)" Title="hello world"></MesmaButton>
+
+    @number.number
+}
+
+@code {
+    public string Text = "Mesma button";
+    public List<IntRef> Numbers { get; set; } = new() { new IntRef() { number = 3, style="height: 300px" }, new IntRef() { number = 8, style= "height: 40px" }, new IntRef() { number = 9}};
+
+    public async void IncrementList(int Index)
+    {
+        Numbers[Index].number += 1;
+    }
+
+    public class IntRef
+    {
+        public int number { get; set; }
+        public string style { get; set; }
+    }
+
+}   
+
